@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BACHE ELEC | Électricité Générale, Rénovation & Climatisation à Toulouse & Saint-Lys</title>
+    <meta name="description" content="Bache Elec, expert en électricité générale, installation de climatisation réversible, domotique et dépannage 7j/7 à Saint-Lys, Toulouse et en Haute-Garonne (31). Devis gratuit.">
+    
+    <!-- Google Fonts: Anton & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#060D10',
+                        cardBg: '#0B191E',
+                        electricBlue: '#0D9488', /* Turquoise professionnel (Teal 600) */
+                        cyberCyan: '#2DD4BF',    /* Turquoise lumineux (Teal 400) */
+                        goldAccent: '#D4AF37',
+                    },
+                    fontFamily: {
+                        heading: ['Anton', 'sans-serif'],
+                        body: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS : Light Mode Pro par défaut + Dark Mode au switch -->
+    <style>
+        :root {
+            --bg-main: #F8FAFC;
+            --bg-secondary: #F1F5F9;
+            --bg-topbar: #0F172A;
+            --text-main: #0F172A;
+            --text-muted: #475569;
+            --card-bg: #FFFFFF;
+            --card-border: #E2E8F0;
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --input-bg: #F8FAFC;
+            --input-border: #CBD5E1;
+            --grid-dot: rgba(15, 23, 42, 0.04);
+        }
+
+        html.dark {
+            --bg-main: #060D10;
+            --bg-secondary: rgba(11, 25, 30, 0.65);
+            --bg-topbar: #030709;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --card-bg: rgba(11, 25, 30, 0.75);
+            --card-border: rgba(45, 212, 191, 0.14);
+            --nav-bg: rgba(6, 13, 16, 0.90);
+            --input-bg: rgba(255, 255, 255, 0.05);
+            --input-border: rgba(45, 212, 191, 0.2);
+            --grid-dot: rgba(45, 212, 191, 0.06);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .font-anton {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 0.03em;
+        }
+
+        .theme-text-main { color: var(--text-main); }
+        .theme-text-muted { color: var(--text-muted); }
+        .theme-section-alt { background-color: var(--bg-secondary); }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: #0D9488;
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px -12px rgba(13, 148, 136, 0.18);
+        }
+
+        .glass-nav {
+            background: var(--nav-bg);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--card-border);
+            transition: background-color 0.3s ease;
+        }
+
+        .theme-input {
+            background-color: var(--input-bg);
+            border: 1px solid var(--input-border);
+            color: var(--text-main);
+            font-size: 16px; /* Anti-zoom iOS */
+        }
+        @media (min-width: 640px) {
+            .theme-input { font-size: 14px; }
+        }
+
+        .glow-blue {
+            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.3);
+        }
+
+        .text-gradient-blue {
+            background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        html.dark .text-gradient-blue {
+            background: linear-gradient(135deg, #2DD4BF 0%, #0D9488 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #B45309 0%, #D97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        html.dark .text-gradient-gold {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-grid-pattern {
+            background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-page {
+            animation: fadeInPage 0.3s ease-out forwards;
+        }
+    </style>
+
+    <!-- Schema.org JSON-LD pour le SEO Local -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Electrician", "HVACBusiness"],
+      "name": "Bache Elec",
+      "telephone": "+33649542845",
+      "email": "info@bacheelec.fr",
+      "url": "https://bacheelec.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "41 Rue Joseph Bouas",
+        "addressLocality": "Saint-Lys",
+        "postalCode": "31470",
+        "addressCountry": "FR"
+      },
+      "areaServed": ["Toulouse", "Saint-Lys", "Colomiers", "Muret", "Blagnac", "Merville", "Haute-Garonne"]
+    }
+    </script>
+</head>
+<body class="bg-grid-pattern relative selection:bg-electricBlue selection:text-white">
+
+    <!-- Halos discrets -->
+    <div class="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-electricBlue/5 dark:bg-cyberCyan/10 blur-[140px] pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-cyberCyan/5 dark:bg-cyberCyan/10 blur-[140px] pointer-events-none z-0"></div>
+
+    <!-- TOP BAR -->
+    <div class="bg-[#0F172A] dark:bg-[#030709] text-xs text-slate-300 py-2.5 border-b border-white/5 relative z-20 hidden md:block">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span><i class="fa-solid fa-location-dot text-cyberCyan mr-2"></i>41 Joseph Bouas, 31470 Saint-Lys (Intervention sur tout le 31)</span>
+                <span><i class="fa-regular fa-clock text-cyberCyan mr-2"></i>Lun - Ven : 08h00 - 18h00 (Dépannage 7j/7)</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="mailto:info@bacheelec.fr" class="hover:text-white transition"><i class="fa-regular fa-envelope text-cyberCyan mr-2"></i>info@bacheelec.fr</a>
+                <div class="flex space-x-3 border-l border-white/15 pl-4">
+                    <a href="#" aria-label="Facebook" class="hover:text-cyberCyan transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" class="hover:text-cyberCyan transition"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header class="sticky top-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" onclick="closeServicePage()" class="flex items-center space-x-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-electricBlue to-cyberCyan flex items-center justify-center shadow-md group-hover:scale-105 transition">
+                    <i class="fa-solid fa-bolt-lightning text-white text-xl"></i>
+                </div>
+                <div>
+                    <span class="font-anton text-2xl tracking-wider theme-text-main block leading-none">BACHE <span class="text-electricBlue dark:text-cyberCyan">ELEC</span></span>
+                    <span class="text-[9px] uppercase tracking-[0.16em] theme-text-muted font-bold block mt-1">Électricité, Rénovation & Climatisation</span>
+                </div>
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden lg:flex items-center space-x-7 text-sm font-semibold theme-text-muted">
+                <a href="#services" onclick="closeServicePage()" class="hover:text-electricBlue dark:hover:text-cyberCyan transition">Nos Prestations</a>
+                <a href="#service-climatisation" onclick="openServicePage('climatisation')" class="text-electricBlue dark:text-cyberCyan font-bold flex items-center hover:opacity-80 transition">
+                    <i class="fa-regular fa-snowflake mr-1.5"></i>Climatisation
+                </a>
+                <a href="#realisations" onclick="closeServicePage()" class="hover:text-electricBlue dark:hover:text-cyberCyan transition">Réalisations</a>
+                <a href="#processus" onclick="closeServicePage()" class="hover:text-electricBlue dark:hover:text-cyberCyan transition">Notre Méthode</a>
+                <a href="#avis" onclick="closeServicePage()" class="hover:text-electricBlue dark:hover:text-cyberCyan transition">Avis Clients</a>
+            </nav>
+
+            <!-- Actions + Switch Desktop (Positionné sur Jour par défaut) -->
+            <div class="hidden sm:flex items-center space-x-3">
+                <button id="theme-toggle" aria-label="Changer le thème Clair / Sombre" class="relative w-16 h-9 rounded-full bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-white/15 p-1 flex items-center justify-between transition-colors duration-300 focus:outline-none" title="Basculer entre le mode Clair et Sombre">
+                    <i class="fa-solid fa-sun text-amber-500 text-xs ml-1.5 z-10"></i>
+                    <i class="fa-solid fa-moon text-slate-500 dark:text-cyberCyan text-xs mr-1.5 z-10"></i>
+                    <span id="theme-toggle-dot" class="absolute left-1 top-1 w-7 h-7 rounded-full bg-white dark:bg-electricBlue shadow-md transform translate-x-0 transition-transform duration-300"></span>
+                </button>
+
+                <a href="tel:+33649542845" class="flex items-center space-x-2 text-sm font-bold theme-text-main glass-card px-4 py-2.5 rounded-xl hover:border-electricBlue transition">
+                    <i class="fa-solid fa-phone-volume text-electricBlue dark:text-cyberCyan"></i>
+                    <span>06 49 54 28 45</span>
+                </a>
+                <a href="#devis" onclick="closeServicePage()" class="bg-electricBlue hover:bg-teal-700 text-white font-bold text-sm px-5 py-2.5 rounded-xl glow-blue transition">
+                    Devis Gratuit
+                </a>
+            </div>
+
+            <!-- Contrôles Mobile -->
+            <div class="flex items-center space-x-3 lg:hidden">
+                <button id="theme-toggle-mobile" aria-label="Changer le thème" class="w-10 h-10 rounded-xl glass-card flex items-center justify-center theme-text-main">
+                    <i id="theme-mobile-icon" class="fa-solid fa-sun text-amber-500"></i>
+                </button>
+                <button id="mobile-menu-btn" aria-label="Menu" class="theme-text-main text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Déroulant -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-card border-b px-6 py-5 space-y-4">
+            <a href="#services" onclick="closeServicePage()" class="block theme-text-main font-semibold py-1">Toutes nos prestations</a>
+            <a href="#service-climatisation" onclick="openServicePage('climatisation')" class="block text-electricBlue dark:text-cyberCyan font-bold py-1"><i class="fa-regular fa-snowflake mr-2"></i>Installation Climatisation</a>
+            <a href="#realisations" onclick="closeServicePage()" class="block theme-text-main font-semibold py-1">Réalisations</a>
+            <a href="#avis" onclick="closeServicePage()" class="block theme-text-main font-semibold py-1">Avis Clients</a>
+            <div class="pt-3 border-t border-slate-200 dark:border-white/10 flex flex-col space-y-3">
+                <a href="tel:+33649542845" class="w-full text-center py-3 rounded-xl glass-card font-bold theme-text-main"><i class="fa-solid fa-phone mr-2 text-electricBlue"></i>06 49 54 28 45</a>
+                <a href="#devis" onclick="closeServicePage()" class="w-full text-center py-3 rounded-xl bg-electricBlue font-bold text-white">Demander un devis</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================================================= -->
+    <!-- VUE 1 : PAGE D'ACCUEIL PRINCIPALE                                         -->
+    <!-- ========================================================================= -->
+    <main id="home-view">
+
+        <!-- HERO SECTION -->
+        <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-28 z-10 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-electricBlue/10 border border-electricBlue/25 text-electricBlue dark:text-cyberCyan text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full">
+                        <span class="w-2 h-2 rounded-full bg-electricBlue dark:bg-cyberCyan"></span>
+                        <span>Artisan Électricien & Climaticien — Toulouse & Haute-Garonne (31)</span>
+                    </div>
+
+                    <h1 class="font-anton text-4xl sm:text-6xl lg:text-7xl leading-[1.08] uppercase theme-text-main">
+                        VOTRE EXPERT EN <span class="text-gradient-blue">ÉLECTRICITÉ</span>, RÉNOVATION & <span class="text-gradient-gold">CLIMATISATION</span>
+                    </h1>
+
+                    <p class="theme-text-muted text-base sm:text-lg leading-relaxed max-w-2xl font-medium">
+                        De la mise aux normes <strong>NF C 15-100</strong> de votre habitat jusqu'à l'installation de votre <strong>climatisation réversible haute performance</strong>. Bache Elec accompagne les particuliers et professionnels avec rigueur et passion dans leurs projets.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <a href="#devis" class="bg-electricBlue hover:bg-teal-700 text-white font-bold text-base px-8 py-4 rounded-xl glow-blue text-center transition flex items-center justify-center space-x-3">
+                            <span>Demander un devis gratuit</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#services" class="glass-card theme-text-main font-bold text-base px-8 py-4 rounded-xl text-center hover:border-electricBlue transition flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-screwdriver-wrench text-electricBlue dark:text-cyberCyan"></i>
+                            <span>Découvrir nos prestations</span>
+                        </a>
+                    </div>
+
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200 dark:border-white/10 max-w-xl">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-shield-halved text-2xl text-amber-600 dark:text-amber-500"></i>
+                            <span class="text-xs sm:text-sm font-bold theme-text-main">Garantie Décennale</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check-double text-2xl text-electricBlue dark:text-cyberCyan"></i>
+                            <span class="text-xs sm:text-sm font-bold theme-text-main">Norme NF C 15-100</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-temperature-arrow-down text-2xl text-electricBlue dark:text-cyberCyan"></i>
+                            <span class="text-xs sm:text-sm font-bold theme-text-main">Clim A+++ Éco-Énergie</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/15 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=80" alt="Artisan Électricien et Technicien Climatisation Bache Elec Toulouse" class="w-full h-[460px] object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
+
+                        <div class="absolute bottom-6 left-6 right-6 bg-slate-900/95 backdrop-blur-md p-5 rounded-2xl border border-white/15">
+                            <div class="grid grid-cols-3 divide-x divide-white/15 text-center">
+                                <div>
+                                    <span class="font-anton text-3xl text-cyberCyan block">10+</span>
+                                    <span class="text-[11px] text-slate-200 uppercase font-semibold">Ans d'Expérience</span>
+                                </div>
+                                <div>
+                                    <span class="font-anton text-3xl text-white block">150+</span>
+                                    <span class="text-[11px] text-slate-200 uppercase font-semibold">Chantiers Livrés</span>
+                                </div>
+                                <div>
+                                    <span class="font-anton text-3xl text-goldAccent block">100%</span>
+                                    <span class="text-[11px] text-slate-200 uppercase font-semibold">Clients Satisfaits</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION FOCUS : CLIMATISATION -->
+        <section id="climatisation" class="py-20 relative z-10 theme-section-alt border-y border-slate-200 dark:border-white/10">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="text-electricBlue dark:text-cyberCyan font-bold text-xs uppercase tracking-widest bg-electricBlue/10 px-3.5 py-1.5 rounded-full border border-electricBlue/25">
+                            <i class="fa-regular fa-snowflake mr-1.5"></i>Confort Thermique & Économies
+                        </span>
+                        <h2 class="font-anton text-3xl sm:text-5xl uppercase theme-text-main leading-tight">
+                            INSTALLATION DE <span class="text-gradient-blue">CLIMATISATION RÉVERSIBLE</span> & PAC AIR/AIR
+                        </h2>
+                        <p class="theme-text-muted leading-relaxed font-medium">
+                            Profitez d'une température idéale été comme hiver tout en réduisant votre facture de chauffage. Grâce à notre double compétence en électricité générale et génie climatique, nous assurons une pose propre, durable et silencieuse.
+                        </p>
+
+                        <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                            <div class="glass-card p-4 rounded-xl">
+                                <i class="fa-solid fa-wind text-electricBlue dark:text-cyberCyan text-xl mb-2"></i>
+                                <h3 class="font-bold theme-text-main text-sm mb-1">Mono & Multi-Split</h3>
+                                <p class="text-xs theme-text-muted">Équipez votre séjour ou l'ensemble de vos chambres avec une gestion indépendante par pièce.</p>
+                            </div>
+                            <div class="glass-card p-4 rounded-xl">
+                                <i class="fa-solid fa-house-laptop text-electricBlue dark:text-cyberCyan text-xl mb-2"></i>
+                                <h3 class="font-bold theme-text-main text-sm mb-1">Climatisation Gainable</h3>
+                                <p class="text-xs theme-text-muted">Solution 100% encastrée dans les combles ou faux-plafonds, seules de fines grilles sont visibles.</p>
+                            </div>
+                            <div class="glass-card p-4 rounded-xl">
+                                <i class="fa-solid fa-leaf text-emerald-600 dark:text-emerald-400 text-xl mb-2"></i>
+                                <h3 class="font-bold theme-text-main text-sm mb-1">Chauffage Économique</h3>
+                                <p class="text-xs theme-text-muted">Pompe à chaleur Inverter A+++ : jusqu'à 70% d'économies par rapport à des radiateurs électriques classiques.</p>
+                            </div>
+                            <div class="glass-card p-4 rounded-xl">
+                                <i class="fa-solid fa-screwdriver-wrench text-amber-600 dark:text-amber-500 text-xl mb-2"></i>
+                                <h3 class="font-bold theme-text-main text-sm mb-1">Mise en service & SAV</h3>
+                                <p class="text-xs theme-text-muted">Étude d'implantation gratuite à domicile, protection électrique au tableau, entretien et dépannage.</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex flex-wrap items-center gap-4">
+                            <button onclick="openServicePage('climatisation')" class="bg-electricBlue hover:bg-teal-700 text-white font-bold text-sm px-6 py-4 rounded-xl glow-blue transition flex items-center space-x-2">
+                                <span>Découvrir la prestation en détail</span>
+                                <i class="fa-solid fa-book-open"></i>
+                            </button>
+                            <button onclick="scrollToQuoteWithService('climatisation')" class="glass-card theme-text-main font-bold text-sm px-6 py-4 rounded-xl hover:border-electricBlue transition">
+                                Demander un devis Clim
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6">
+                        <div class="glass-card p-6 sm:p-8 rounded-3xl relative">
+                            <div class="absolute -top-3.5 right-6 bg-electricBlue text-white text-xs font-bold uppercase px-4 py-1.5 rounded-full shadow-md">
+                                Été & Hiver
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1631545806609-35d4ae490431?auto=format&fit=crop&w=900&q=80" alt="Installation Climatisation Murale Bache Elec" class="w-full h-64 sm:h-72 object-cover rounded-2xl mb-6">
+                            <h3 class="font-anton text-2xl theme-text-main uppercase mb-3">L'avantage de faire appel à un artisan électricien :</h3>
+                            <ul class="space-y-3 text-sm theme-text-muted">
+                                <li class="flex items-start space-x-3">
+                                    <i class="fa-solid fa-circle-check text-electricBlue dark:text-cyberCyan mt-1"></i>
+                                    <span><strong class="theme-text-main">Raccordement normé au tableau :</strong> Tirage d'une ligne électrique dédiée avec disjoncteur calibré pour la sécurité de votre installation.</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fa-solid fa-circle-check text-electricBlue dark:text-cyberCyan mt-1"></i>
+                                    <span><strong class="theme-text-main">Marques reconnues :</strong> Pose d'équipements Daikin, Mitsubishi Electric, Atlantic et Toshiba.</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fa-solid fa-circle-check text-electricBlue dark:text-cyberCyan mt-1"></i>
+                                    <span><strong class="theme-text-main">Travail soigné :</strong> Percements propres, finitions discrètes et nettoyage complet en fin de chantier.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- GRILLE DE TOUS LES SERVICES -->
+        <section id="services" class="py-24 relative z-10">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-electricBlue dark:text-cyberCyan font-bold text-xs uppercase tracking-widest">Nos Domaines d'Intervention</span>
+                    <h2 class="font-anton text-3xl sm:text-5xl uppercase theme-text-main">TOUTES NOS PRESTATIONS ÉLECTRIQUES & CLIMATIQUES</h2>
+                    <p class="theme-text-muted text-sm sm:text-base font-medium">
+                        Cliquez sur <strong>"Découvrir la prestation"</strong> pour consulter le détail technique de chaque service, ou demandez directement votre chiffrage gratuit.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Carte 1 : Climatisation -->
+                    <div class="glass-card rounded-2xl p-7 relative flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-electricBlue/10 border border-electricBlue/20 flex items-center justify-center text-electricBlue dark:text-cyberCyan text-2xl mb-6">
+                                <i class="fa-solid fa-snowflake"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-electricBlue dark:text-cyberCyan bg-electricBlue/10 px-2.5 py-1 rounded-md">Froid & Chauffage</span>
+                            <h3 class="font-anton text-2xl theme-text-main uppercase mt-3 mb-3">Climatisation Réversible</h3>
+                            <p class="theme-text-muted text-sm leading-relaxed mb-6">
+                                Pose, raccordement et mise en service de systèmes monosplit, multisplit et gainables. Confort 4 saisons et économies d'énergie.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 dark:border-white/10 flex flex-col space-y-2.5">
+                            <button onclick="openServicePage('climatisation')" class="w-full py-2.5 px-4 rounded-xl bg-electricBlue/10 hover:bg-electricBlue hover:text-white text-electricBlue dark:text-cyberCyan font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-2">
+                                <span>Découvrir la prestation</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                            <button onclick="scrollToQuoteWithService('climatisation')" class="text-xs font-bold theme-text-muted hover:text-electricBlue dark:hover:text-cyberCyan py-1.5 transition flex items-center justify-center">
+                                <span>Demander un devis direct</span>
+                                <i class="fa-solid fa-angle-right ml-1.5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Carte 2 : Installation Électrique Complète -->
+                    <div class="glass-card rounded-2xl p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-electricBlue/10 border border-electricBlue/20 flex items-center justify-center text-electricBlue dark:text-cyberCyan text-2xl mb-6">
+                                <i class="fa-solid fa-plug-circle-bolt"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider theme-text-muted bg-slate-500/10 px-2.5 py-1 rounded-md">Neuf & Extension</span>
+                            <h3 class="font-anton text-2xl theme-text-main uppercase mt-3 mb-3">Installation Électrique Complète</h3>
+                            <p class="theme-text-muted text-sm leading-relaxed mb-6">
+                                Réalisation intégrale de votre réseau électrique pour maisons neuves, villas et locaux professionnels dans le respect de la norme NF C 15-100.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 dark:border-white/10 flex flex-col space-y-2.5">
+                            <button onclick="openServicePage('installation')" class="w-full py-2.5 px-4 rounded-xl bg-electricBlue/10 hover:bg-electricBlue hover:text-white text-electricBlue dark:text-cyberCyan font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-2">
+                                <span>Découvrir la prestation</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                            <button onclick="scrollToQuoteWithService('installation')" class="text-xs font-bold theme-text-muted hover:text-electricBlue dark:hover:text-cyberCyan py-1.5 transition flex items-center justify-center">
+                                <span>Demander un devis direct</span>
+                                <i class="fa-solid fa-angle-right ml-1.5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Carte 3 : Rénovation & Tableaux Électriques -->
+                    <div class="glass-card rounded-2xl p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-600 dark:text-amber-500 text-2xl mb-6">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-700 dark:text-goldAccent bg-amber-500/10 px-2.5 py-1 rounded-md">Mise en sécurité</span>
+                            <h3 class="font-anton text-2xl theme-text-main uppercase mt-3 mb-3">Rénovation & Tableaux Électriques</h3>
+                            <p class="theme-text-muted text-sm leading-relaxed mb-6">
+                                Remplacement de tableaux électriques vétustes, mise en sécurité totale ou partielle, création de prise de terre et mise en conformité.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 dark:border-white/10 flex flex-col space-y-2.5">
+                            <button onclick="openServicePage('renovation')" class="w-full py-2.5 px-4 rounded-xl bg-electricBlue/10 hover:bg-electricBlue hover:text-white text-electricBlue dark:text-cyberCyan font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-2">
+                                <span>Découvrir la prestation</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                            <button onclick="scrollToQuoteWithService('renovation')" class="text-xs font-bold theme-text-muted hover:text-electricBlue dark:hover:text-cyberCyan py-1.5 transition flex items-center justify-center">
+                                <span>Demander un devis direct</span>
+                                <i class="fa-solid fa-angle-right ml-1.5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Carte 4 : Domotique & Sans Fil -->
+                    <div class="glass-card rounded-2xl p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-electricBlue/10 border border-electricBlue/20 flex items-center justify-center text-electricBlue dark:text-cyberCyan text-2xl mb-6">
+                                <i class="fa-solid fa-house-signal"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-electricBlue dark:text-cyberCyan bg-electricBlue/10 px-2.5 py-1 rounded-md">Maison Connectée</span>
+                            <h3 class="font-anton text-2xl theme-text-main uppercase mt-3 mb-3">Domotique & Automatisme</h3>
+                            <p class="theme-text-muted text-sm leading-relaxed mb-6">
+                                Centralisation des volets roulants, éclairages sans fil, pilotage du chauffage et visiophonie connectée sur smartphone.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 dark:border-white/10 flex flex-col space-y-2.5">
+                            <button onclick="openServicePage('domotique')" class="w-full py-2.5 px-4 rounded-xl bg-electricBlue/10 hover:bg-electricBlue hover:text-white text-electricBlue dark:text-cyberCyan font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-2">
+                                <span>Découvrir la prestation</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                            <button onclick="scrollToQuoteWithService('domotique')" class="text-xs font-bold theme-text-muted hover:text-electricBlue dark:hover:text-cyberCyan py-1.5 transition flex items-center justify-center">
+                                <span>Demander un devis direct</span>
+                                <i class="fa-solid fa-angle-right ml-1.5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Carte 5 : VMC & Réseau RJ45 -->
+                    <div class="glass-card rounded-2xl p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-2xl mb-6">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md">Ventilation & Réseau</span>
+                            <h3 class="font-anton text-2xl theme-text-main uppercase mt-3 mb-3">VMC & Réseau Informatique</h3>
+                            <p class="theme-text-muted text-sm leading-relaxed mb-6">
+                                Pose de VMC simple ou double flux pour assainir votre intérieur. Câblage RJ45, coffrets de communication et bornes Wi-Fi.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 dark:border-white/10 flex flex-col space-y-2.5">
+                            <button onclick="openServicePage('vmc')" class="w-full py-2.5 px-4 rounded-xl bg-electricBlue/10 hover:bg-electricBlue hover:text-white text-electricBlue dark:text-cyberCyan font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-2">
+                                <span>Découvrir la prestation</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                            <button onclick="scrollToQuoteWithService('domotique')" class="text-xs font-bold theme-text-muted hover:text-electricBlue dark:hover:text-cyberCyan py-1.5 transition flex items-center justify-center">
+                                <span>Demander un devis direct</span>
+                                <i class="fa-solid fa-angle-right ml-1.5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Carte 6 : Dépannage Électrique Urgent -->
+                    <div class="glass-card rounded-2xl p-7 flex flex-col justify-between border-red-500/30">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-red-500/10 border border-red-500/25 flex items-center justify-center text-red-600 dark:text-red-500 text-2xl mb-6">
+                                <i class="fa-solid fa-truck-fast"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-red-600 dark:text-red-400 bg-red-500/10 px-2.5 py-1 rounded-md">Intervention Rapide</span>
+                            <h3 class="font-anton text-2xl theme-text-main uppercase mt-3 mb-3">Dépannage & Recherche de Panne</h3>
+                            <p class="theme-text-muted text-sm leading-relaxed mb-6">
+                                Coupure de courant, disjoncteur qui saute, court-circuit ou panne de climatisation ? Diagnostic précis et réparation rapide à Saint-Lys et Toulouse.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 dark:border-white/10 flex flex-col space-y-2.5">
+                            <button onclick="openServicePage('depannage')" class="w-full py-2.5 px-4 rounded-xl bg-red-500/10 hover:bg-red-600 hover:text-white text-red-600 dark:text-red-400 font-bold text-xs uppercase tracking-wider transition flex items-center justify-center space-x-2">
+                                <span>Découvrir la prestation</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                            <a href="tel:+33649542845" class="text-xs font-bold text-red-600 dark:text-red-400 hover:underline py-1.5 transition flex items-center justify-center">
+                                <i class="fa-solid fa-phone mr-1.5"></i>
+                                <span>Urgence : 06 49 54 28 45</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- RÉALISATIONS (CARROUSELS PAR PROJET + COMPARATEUR AVANT/APRÈS)        -->
+        <!-- ===================================================================== -->
+        <section id="realisations" class="py-24 theme-section-alt border-t border-slate-200 dark:border-white/5 relative z-10">
+            <div class="max-w-7xl mx-auto px-6">
+                
+                <!-- En-tête & Filtres -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                    <div>
+                        <span class="text-electricBlue dark:text-cyberCyan font-bold text-xs uppercase tracking-widest">Nos Chantiers</span>
+                        <h2 class="font-anton text-3xl sm:text-5xl uppercase theme-text-main mt-2">EXEMPLES DE RÉALISATIONS EN HAUTE-GARONNE</h2>
+                        <p class="theme-text-muted text-sm mt-1">Faites défiler les photos de chaque chantier avec les flèches pour voir les détails de nos finitions.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="filterProjects('all', this)" class="filter-btn bg-electricBlue text-white text-xs font-bold px-4 py-2.5 rounded-xl transition">Tout voir</button>
+                        <button onclick="filterProjects('clim', this)" class="filter-btn glass-card theme-text-main text-xs font-bold px-4 py-2.5 rounded-xl transition">Climatisation</button>
+                        <button onclick="filterProjects('renovation', this)" class="filter-btn glass-card theme-text-main text-xs font-bold px-4 py-2.5 rounded-xl transition">Rénovation</button>
+                        <button onclick="filterProjects('eclairage', this)" class="filter-btn glass-card theme-text-main text-xs font-bold px-4 py-2.5 rounded-xl transition">Éclairage & Neuf</button>
+                    </div>
+                </div>
+
+                <!-- GRILLE DES PROJETS AVEC CARROUSELS INTÉGRÉS -->
+                <div class="grid md:grid-cols-2 gap-8 mb-20" id="projects-grid">
+                    
+                    <!-- PROJET 1 : CLIMATISATION (3 photos dans le carrousel) -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden group" data-category="clim" data-carousel>
+                        <div class="relative h-64 sm:h-72 overflow-hidden bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1631545806609-35d4ae490431?auto=format&fit=crop&w=800&q=80" alt="Unité intérieure Climatisation Saint-Lys" class="carousel-slide w-full h-full object-cover transition-opacity duration-300 opacity-100">
+                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Mise en service PAC Air/Air" class="carousel-slide w-full h-full object-cover transition-opacity duration-300 opacity-0 hidden absolute inset-0">
+                            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Raccordement électrique dédié clim" class="carousel-slide w-full h-full object-cover transition-opacity duration-300 opacity-0 hidden absolute inset-0">
+                            
+                            <span class="absolute top-4 left-4 z-10 bg-electricBlue text-white text-xs font-bold uppercase px-3 py-1 rounded-lg shadow-md">Climatisation Réversible</span>
+                            <span class="carousel-counter absolute top-4 right-4 z-10 bg-slate-950/75 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-sm">1 / 3</span>
+
+                            <button type="button" onclick="moveSlide(this, -1)" aria-label="Photo précédente" class="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-slate-950/60 hover:bg-electricBlue text-white flex items-center justify-center backdrop-blur-sm transition">
+                                <i class="fa-solid fa-chevron-left text-xs"></i>
+                            </button>
+                            <button type="button" onclick="moveSlide(this, 1)" aria-label="Photo suivante" class="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-slate-950/60 hover:bg-electricBlue text-white flex items-center justify-center backdrop-blur-sm transition">
+                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </button>
+
+                            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex space-x-1.5 bg-slate-950/50 px-2.5 py-1.5 rounded-full backdrop-blur-sm">
+                                <span class="carousel-dot w-2.5 h-2 rounded-full bg-cyberCyan transition-all"></span>
+                                <span class="carousel-dot w-2 h-2 rounded-full bg-white/40 transition-all"></span>
+                                <span class="carousel-dot w-2 h-2 rounded-full bg-white/40 transition-all"></span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-anton text-2xl theme-text-main uppercase mb-2">Installation Multi-Split & Gainable — Villa à Saint-Lys</h3>
+                            <p class="theme-text-muted text-sm leading-relaxed">
+                                Installation complète d'une pompe à chaleur Air/Air réversible A+++ pour une maison de 140m². Intégration discrète, création d'une protection électrique dédiée au tableau et pilotage Wi-Fi pièce par pièce.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- PROJET 2 : RÉNOVATION (3 photos dans le carrousel) -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden group" data-category="renovation" data-carousel>
+                        <div class="relative h-64 sm:h-72 overflow-hidden bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1558402529-d2638a7023e9?auto=format&fit=crop&w=800&q=80" alt="Rénovation Tableau Électrique Colomiers" class="carousel-slide w-full h-full object-cover transition-opacity duration-300 opacity-100">
+                            <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80" alt="Câblage normé NF C 15-100" class="carousel-slide w-full h-full object-cover transition-opacity duration-300 opacity-0 hidden absolute inset-0">
+                            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80" alt="Appareillage et domotique" class="carousel-slide w-full h-full object-cover transition-opacity duration-300 opacity-0 hidden absolute inset-0">
+                            
+                            <span class="absolute top-4 left-4 z-10 bg-slate-900 text-white text-xs font-bold uppercase px-3 py-1 rounded-lg shadow-md">Rénovation Totale</span>
+                            <span class="carousel-counter absolute top-4 right-4 z-10 bg-slate-950/75 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-sm">1 / 3</span>
+
+                            <button type="button" onclick="moveSlide(this, -1)" aria-label="Photo précédente" class="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-slate-950/60 hover:bg-electricBlue text-white flex items-center justify-center backdrop-blur-sm transition">
+                                <i class="fa-solid fa-chevron-left text-xs"></i>
+                            </button>
+                            <button type="button" onclick="moveSlide(this, 1)" aria-label="Photo suivante" class="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-slate-950/60 hover:bg-electricBlue text-white flex items-center justify-center backdrop-blur-sm transition">
+                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </button>
+
+                            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex space-x-1.5 bg-slate-950/50 px-2.5 py-1.5 rounded-full backdrop-blur-sm">
+                                <span class="carousel-dot w-2.5 h-2 rounded-full bg-cyberCyan transition-all"></span>
+                                <span class="carousel-dot w-2 h-2 rounded-full bg-white/40 transition-all"></span>
+                                <span class="carousel-dot w-2 h-2 rounded-full bg-white/40 transition-all"></span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-anton text-2xl theme-text-main uppercase mb-2">Rénovation Électrique Complète — Villa à Colomiers</h3>
+                            <p class="theme-text-muted text-sm leading-relaxed">
+                                Remise aux normes NF C 15-100 intégrale d'une villa individuelle. Remplacement du tableau électrique principal, redistribution des circuits prises/éclairages et intégration de commandes domotiques.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- PROJET 3 : ÉCLAIRAGE TERTIAIRE (2 photos dans le carrousel) -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden group" data-category="eclairage" data-carousel>
+                        <div class="relative h-64 sm:h-72 overflow-hidden bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80" alt="Éclairage Salle de Musique Toulouse" class="carousel-slide w-full h-full object-cover transition-opacity duration-300 opacity-100">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Spots LED architecturaux" class="carousel-slide w-full h-full object-cover transition-opacity duration-300 opacity-0 hidden absolute inset-0">
+                            
+                            <span class="absolute top-4 left-4 z-10 bg-amber-600 text-white text-xs font-bold uppercase px-3 py-1 rounded-lg shadow-md">Tertiaire & Éclairage</span>
+                            <span class="carousel-counter absolute top-4 right-4 z-10 bg-slate-950/75 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-sm">1 / 2</span>
+
+                            <button type="button" onclick="moveSlide(this, -1)" aria-label="Photo précédente" class="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-slate-950/60 hover:bg-electricBlue text-white flex items-center justify-center backdrop-blur-sm transition">
+                                <i class="fa-solid fa-chevron-left text-xs"></i>
+                            </button>
+                            <button type="button" onclick="moveSlide(this, 1)" aria-label="Photo suivante" class="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-slate-950/60 hover:bg-electricBlue text-white flex items-center justify-center backdrop-blur-sm transition">
+                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </button>
+
+                            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex space-x-1.5 bg-slate-950/50 px-2.5 py-1.5 rounded-full backdrop-blur-sm">
+                                <span class="carousel-dot w-2.5 h-2 rounded-full bg-cyberCyan transition-all"></span>
+                                <span class="carousel-dot w-2 h-2 rounded-full bg-white/40 transition-all"></span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-anton text-2xl theme-text-main uppercase mb-2">Transformation & Éclairage LED — École de Musique à Toulouse</h3>
+                            <p class="theme-text-muted text-sm leading-relaxed">
+                                Étude d'éclairage acoustique et visuel sur mesure. Pose de luminaires LED architecturaux basse consommation et sécurisation des alimentations électriques pour le matériel audio professionnel.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- PROJET 4 : CONSTRUCTION NEUVE (2 photos dans le carrousel) -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden group" data-category="eclairage" data-carousel>
+                        <div class="relative h-64 sm:h-72 overflow-hidden bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Électrification Maison Neuve Merville" class="carousel-slide w-full h-full object-cover transition-opacity duration-300 opacity-100">
+                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Réseau VDI et GTL Maison Neuve" class="carousel-slide w-full h-full object-cover transition-opacity duration-300 opacity-0 hidden absolute inset-0">
+                            
+                            <span class="absolute top-4 left-4 z-10 bg-electricBlue text-white text-xs font-bold uppercase px-3 py-1 rounded-lg shadow-md">Construction Neuve</span>
+                            <span class="carousel-counter absolute top-4 right-4 z-10 bg-slate-950/75 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-sm">1 / 2</span>
+
+                            <button type="button" onclick="moveSlide(this, -1)" aria-label="Photo précédente" class="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-slate-950/60 hover:bg-electricBlue text-white flex items-center justify-center backdrop-blur-sm transition">
+                                <i class="fa-solid fa-chevron-left text-xs"></i>
+                            </button>
+                            <button type="button" onclick="moveSlide(this, 1)" aria-label="Photo suivante" class="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-slate-950/60 hover:bg-electricBlue text-white flex items-center justify-center backdrop-blur-sm transition">
+                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </button>
+
+                            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex space-x-1.5 bg-slate-950/50 px-2.5 py-1.5 rounded-full backdrop-blur-sm">
+                                <span class="carousel-dot w-2.5 h-2 rounded-full bg-cyberCyan transition-all"></span>
+                                <span class="carousel-dot w-2 h-2 rounded-full bg-white/40 transition-all"></span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-anton text-2xl theme-text-main uppercase mb-2">Électrification & Éclairage Intérieur/Extérieur — Merville</h3>
+                            <p class="theme-text-muted text-sm leading-relaxed">
+                                Accompagnement dès la phase gros œuvre : passage des gaines ICTA, pose de la GTL (Gaine Technique Logement), installation d'une VMC hygroréglable et mise en valeur des façades par spots LED extérieurs.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- =============================================================== -->
+                <!-- CADRE AVANT / APRÈS INTERACTIF (SLIDER TACTILE & SOURIS)        -->
+                <!-- =============================================================== -->
+                <div class="glass-card rounded-3xl p-6 sm:p-10 lg:p-12 border border-electricBlue/30">
+                    <div class="grid lg:grid-cols-12 gap-10 items-center">
+                        
+                        <!-- Colonne Texte & Sélecteur de chantier Avant/Après -->
+                        <div class="lg:col-span-5 space-y-5">
+                            <span class="inline-flex items-center space-x-2 text-electricBlue dark:text-cyberCyan font-bold text-xs uppercase tracking-widest bg-electricBlue/10 px-3.5 py-1.5 rounded-full">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                <span>Transformation Réelle</span>
+                            </span>
+                            <h3 class="font-anton text-3xl sm:text-4xl uppercase theme-text-main leading-tight">
+                                CONSTATEZ LA DIFFÉRENCE <span class="text-gradient-blue">AVANT / APRÈS</span>
+                            </h3>
+                            <p class="theme-text-muted text-sm leading-relaxed">
+                                Faites glisser le curseur central de gauche à droite pour observer la qualité de nos mises aux normes électriques et l'intégration de nos climatisations.
+                            </p>
+
+                            <!-- Boutons pour changer d'exemple Avant/Après -->
+                            <div class="space-y-2.5 pt-2">
+                                <span class="text-xs font-bold uppercase theme-text-main block">Choisir un exemple de transformation :</span>
+                                <div class="flex flex-col sm:flex-row gap-2.5">
+                                    <button type="button" onclick="switchBeforeAfter(0, this)" class="ba-switch-btn bg-electricBlue text-white text-xs font-bold px-4 py-3 rounded-xl transition flex items-center justify-center space-x-2">
+                                        <i class="fa-solid fa-bolt"></i>
+                                        <span>Tableau Électrique</span>
+                                    </button>
+                                    <button type="button" onclick="switchBeforeAfter(1, this)" class="ba-switch-btn glass-card theme-text-main text-xs font-bold px-4 py-3 rounded-xl transition flex items-center justify-center space-x-2">
+                                        <i class="fa-regular fa-snowflake"></i>
+                                        <span>Pose Climatisation</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <p id="ba-caption" class="text-xs theme-text-muted italic border-l-2 border-electricBlue pl-3">
+                                Remplacement d'un ancien tableau vétuste et dangereux par un coffret Schneider Electric normé NF C 15-100 avec repérage complet.
+                            </p>
+                        </div>
+
+                        <!-- Colonne Slider Interactif Avant / Après -->
+                        <div class="lg:col-span-7">
+                            <div id="ba-container" class="relative w-full h-[300px] sm:h-[380px] rounded-2xl overflow-hidden select-none shadow-xl border border-slate-200 dark:border-white/15">
+                                
+                                <!-- IMAGE APRÈS (En arrière-plan pleine largeur) -->
+                                <img id="ba-after-img" src="https://images.unsplash.com/photo-1558402529-d2638a7023e9?auto=format&fit=crop&w=1000&q=80" alt="Après intervention Bache Elec" class="absolute inset-0 w-full h-full object-cover pointer-events-none">
+                                <span class="absolute top-4 right-4 z-10 bg-emerald-600 text-white text-xs font-extrabold uppercase px-3 py-1.5 rounded-lg shadow-md pointer-events-none">
+                                    ✓ APRÈS (Normé & Propre)
+                                </span>
+
+                                <!-- IMAGE AVANT (Superposée et découpée dynamiquement via clip-path) -->
+                                <img id="ba-before-img" src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=1000&q=80" alt="Avant intervention Bache Elec" class="absolute inset-0 w-full h-full object-cover pointer-events-none filter sepia-[.35] contrast-125 brightness-75" style="clip-path: inset(0 50% 0 0);">
+                                <span id="ba-before-badge" class="absolute top-4 left-4 z-10 bg-red-600 text-white text-xs font-extrabold uppercase px-3 py-1.5 rounded-lg shadow-md pointer-events-none transition-opacity">
+                                    ⚠️ AVANT (Vétuste)
+                                </span>
+
+                                <!-- Ligne verticale de séparation + Poignée centrale -->
+                                <div id="ba-divider" class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-1 bg-white shadow-[0_0_15px_rgba(0,0,0,0.8)] pointer-events-none z-20 flex items-center justify-center">
+                                    <div class="w-11 h-11 rounded-full bg-electricBlue border-2 border-white text-white shadow-xl flex items-center justify-center space-x-0.5">
+                                        <i class="fa-solid fa-caret-left text-xs"></i>
+                                        <i class="fa-solid fa-caret-right text-xs"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Input Range Invisible qui gère le tactile (iOS/Android) et la souris -->
+                                <input type="range" id="ba-slider" min="0" max="100" value="50" aria-label="Curseur de comparaison Avant Après" oninput="updateBeforeAfter(this.value)" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- NOTRE MÉTHODE -->
+        <section id="processus" class="py-24 relative z-10">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-electricBlue dark:text-cyberCyan font-bold text-xs uppercase tracking-widest">Simplicité & Transparence</span>
+                    <h2 class="font-anton text-3xl sm:text-5xl uppercase theme-text-main mt-2">VOTRE PROJET EN 4 ÉTAPES CLÉS</h2>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass-card p-6 rounded-2xl relative">
+                        <span class="font-anton text-5xl text-slate-400/15 absolute top-4 right-6">01</span>
+                        <div class="w-10 h-10 rounded-xl bg-electricBlue text-white font-bold flex items-center justify-center mb-4">1</div>
+                        <h3 class="font-bold theme-text-main text-lg mb-2">Visite Technique Gratuite</h3>
+                        <p class="theme-text-muted text-xs leading-relaxed">Déplacement sur site (Toulouse & 31) pour évaluer votre installation électrique ou réaliser le bilan thermique de vos pièces à climatiser.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl relative">
+                        <span class="font-anton text-5xl text-slate-400/15 absolute top-4 right-6">02</span>
+                        <div class="w-10 h-10 rounded-xl bg-electricBlue text-white font-bold flex items-center justify-center mb-4">2</div>
+                        <h3 class="font-bold theme-text-main text-lg mb-2">Devis Détaillé sous 48h</h3>
+                        <p class="theme-text-muted text-xs leading-relaxed">Chiffrage clair, transparent et sans surprise avec sélection de matériel professionnel reconnu (Schneider, Legrand, Daikin, Mitsubishi).</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl relative">
+                        <span class="font-anton text-5xl text-slate-400/15 absolute top-4 right-6">03</span>
+                        <div class="w-10 h-10 rounded-xl bg-electricBlue text-white font-bold flex items-center justify-center mb-4">3</div>
+                        <h3 class="font-bold theme-text-main text-lg mb-2">Travaux Soignés & Normés</h3>
+                        <p class="theme-text-muted text-xs leading-relaxed">Intervention dans le respect des délais convenus, de la norme NF C 15-100 et de la propreté de votre habitation.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl relative">
+                        <span class="font-anton text-5xl text-slate-400/15 absolute top-4 right-6">04</span>
+                        <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white font-bold flex items-center justify-center mb-4">4</div>
+                        <h3 class="font-bold theme-text-main text-lg mb-2">Mise en Service & Garantie</h3>
+                        <p class="theme-text-muted text-xs leading-relaxed">Contrôle complet, explications d'utilisation de vos équipements et garantie décennale sur l'ensemble des travaux.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVIS CLIENTS -->
+        <section id="avis" class="py-20 theme-section-alt border-y border-slate-200 dark:border-white/5 relative z-10">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <div class="inline-flex items-center space-x-1 text-amber-500 text-sm mb-2">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <span class="theme-text-main font-bold ml-2">5.0 / 5 — Avis Clients Vérifiés</span>
+                    </div>
+                    <h2 class="font-anton text-3xl sm:text-5xl uppercase theme-text-main">ILS NOUS ONT FAIT CONFIANCE</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="glass-card p-7 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="text-amber-500 text-xs mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="theme-text-muted text-sm italic leading-relaxed mb-6">
+                                "Nous avons été très satisfaits du service fourni par Bache Elec pour notre rénovation électrique et la pose de notre climatisation. Leur expertise, leur professionnalisme et leur approche amicale ont fait toute la différence."
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-3 border-t border-slate-200 dark:border-white/10 pt-4">
+                            <div class="w-10 h-10 rounded-full bg-electricBlue/15 text-electricBlue dark:text-cyberCyan font-bold flex items-center justify-center">M</div>
+                            <div>
+                                <span class="theme-text-main font-bold text-sm block">Marc & Sophie L.</span>
+                                <span class="theme-text-muted text-xs">Propriétaires à Colomiers</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-7 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="text-amber-500 text-xs mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="theme-text-muted text-sm italic leading-relaxed mb-6">
+                                "Bache Elec a été la clé pour résoudre mes problèmes électriques à la maison et installer une clim réversible dans notre salon. Un chantier laissé impeccable et des conseils très précieux. Je recommande vivement !"
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-3 border-t border-slate-200 dark:border-white/10 pt-4">
+                            <div class="w-10 h-10 rounded-full bg-electricBlue/15 text-electricBlue dark:text-cyberCyan font-bold flex items-center justify-center">T</div>
+                            <div>
+                                <span class="theme-text-main font-bold text-sm block">Thomas R.</span>
+                                <span class="theme-text-muted text-xs">Particulier à Saint-Lys</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-7 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="text-amber-500 text-xs mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="theme-text-muted text-sm italic leading-relaxed mb-6">
+                                "Service électrique exceptionnel. L'équipe a résolu nos problèmes de tableau électrique avec rapidité et proposé des solutions d'éclairage LED modernes pour nos locaux à Toulouse. Fortement recommandé."
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-3 border-t border-slate-200 dark:border-white/10 pt-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-500/15 text-amber-600 font-bold flex items-center justify-center">C</div>
+                            <div>
+                                <span class="theme-text-main font-bold text-sm block">Claire D.</span>
+                                <span class="theme-text-muted text-xs">Professionnelle à Toulouse</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT & DEVIS -->
+        <section id="devis" class="py-24 relative z-10">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="glass-card rounded-3xl p-8 sm:p-12 lg:p-16">
+                    <div class="grid lg:grid-cols-12 gap-12">
+                        
+                        <div class="lg:col-span-5 space-y-8">
+                            <div>
+                                <span class="text-electricBlue dark:text-cyberCyan font-bold text-xs uppercase tracking-widest">Contact & Chiffrage</span>
+                                <h2 class="font-anton text-3xl sm:text-5xl uppercase theme-text-main mt-2">DEMANDEZ VOTRE DEVIS GRATUIT</h2>
+                                <p class="theme-text-muted text-sm mt-3 leading-relaxed">
+                                    Un projet d'installation de climatisation, de rénovation électrique ou un besoin de dépannage ? Réponse rapide sous 24h.
+                                </p>
+                            </div>
+
+                            <div class="space-y-4">
+                                <a href="tel:+33649542845" class="flex items-center space-x-4 p-4 rounded-2xl glass-card hover:border-electricBlue transition">
+                                    <div class="w-12 h-12 rounded-xl bg-electricBlue flex items-center justify-center text-white text-xl">
+                                        <i class="fa-solid fa-phone-volume"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs theme-text-muted block">Ligne directe & Urgences</span>
+                                        <span class="text-lg font-bold theme-text-main">06 49 54 28 45</span>
+                                    </div>
+                                </a>
+
+                                <a href="mailto:info@bacheelec.fr" class="flex items-center space-x-4 p-4 rounded-2xl glass-card hover:border-electricBlue transition">
+                                    <div class="w-12 h-12 rounded-xl bg-electricBlue/15 text-electricBlue dark:text-cyberCyan flex items-center justify-center text-xl">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs theme-text-muted block">Email professionnel</span>
+                                        <span class="text-base font-bold theme-text-main">info@bacheelec.fr</span>
+                                    </div>
+                                </a>
+
+                                <div class="flex items-center space-x-4 p-4 rounded-2xl glass-card">
+                                    <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-600 flex items-center justify-center text-xl">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs theme-text-muted block">Siège & Zone d'intervention</span>
+                                        <span class="text-sm font-bold theme-text-main block">41 Joseph Bouas, 31470 Saint-Lys</span>
+                                        <span class="text-xs theme-text-muted">Toulouse, Colomiers, Muret, Blagnac, Plaisance-du-Touch...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-7">
+                            <form id="quote-form" class="space-y-5 glass-card p-6 sm:p-8 rounded-2xl">
+                                <div class="grid sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase theme-text-main mb-2">Nom & Prénom *</label>
+                                        <input type="text" required placeholder="Ex: Jean Dupont" class="w-full theme-input rounded-xl px-4 py-3.5 focus:outline-none focus:border-electricBlue transition">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase theme-text-main mb-2">Téléphone *</label>
+                                        <input type="tel" required placeholder="Ex: 06 12 34 56 78" class="w-full theme-input rounded-xl px-4 py-3.5 focus:outline-none focus:border-electricBlue transition">
+                                    </div>
+                                </div>
+
+                                <div class="grid sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase theme-text-main mb-2">Ville du projet *</label>
+                                        <input type="text" required placeholder="Ex: Toulouse, Saint-Lys, Colomiers..." class="w-full theme-input rounded-xl px-4 py-3.5 focus:outline-none focus:border-electricBlue transition">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase theme-text-main mb-2">Type de prestation *</label>
+                                        <select id="service-select" required class="w-full theme-input rounded-xl px-4 py-3.5 focus:outline-none focus:border-electricBlue transition">
+                                            <option value="climatisation" class="bg-white dark:bg-[#0B191E] text-slate-900 dark:text-white">❄️ Installation Climatisation Réversible</option>
+                                            <option value="renovation" class="bg-white dark:bg-[#0B191E] text-slate-900 dark:text-white">⚡ Rénovation Électrique / Mise aux normes</option>
+                                            <option value="installation" class="bg-white dark:bg-[#0B191E] text-slate-900 dark:text-white">🏠 Installation Électrique Neuve</option>
+                                            <option value="domotique" class="bg-white dark:bg-[#0B191E] text-slate-900 dark:text-white">📱 Domotique, VMC & Réseau</option>
+                                            <option value="depannage" class="bg-white dark:bg-[#0B191E] text-slate-900 dark:text-white">🚨 Dépannage Électrique Urgent</option>
+                                            <option value="autre" class="bg-white dark:bg-[#0B191E] text-slate-900 dark:text-white">Autre demande</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold uppercase theme-text-main mb-2">Détails de votre projet</label>
+                                    <textarea rows="4" placeholder="Précisez la surface ou le nombre de pièces à climatiser, ou décrivez vos besoins électriques..." class="w-full theme-input rounded-xl px-4 py-3.5 focus:outline-none focus:border-electricBlue transition"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-electricBlue hover:bg-teal-700 text-white font-bold text-base py-4 rounded-xl glow-blue transition flex items-center justify-center space-x-2">
+                                    <span>Envoyer ma demande de devis gratuit</span>
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                </button>
+
+                                <p id="form-feedback" class="hidden text-center text-emerald-600 dark:text-emerald-400 text-sm font-semibold pt-2">
+                                    <i class="fa-solid fa-circle-check mr-1"></i> Votre demande a bien été envoyée ! Nous vous recontactons très rapidement.
+                                </p>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================================================= -->
+    <!-- VUE 2 : PAGE DÉTAILLÉE D'UNE PRESTATION                                   -->
+    <!-- ========================================================================= -->
+    <section id="service-detail-view" class="hidden py-12 lg:py-20 relative z-10 min-h-screen animate-page">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <!-- Fil d'Ariane & Bouton Retour -->
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-10 pb-6 border-b border-slate-200 dark:border-white/10">
+                <button onclick="closeServicePage()" class="inline-flex items-center space-x-2.5 text-sm font-bold theme-text-main glass-card px-5 py-3 rounded-xl hover:border-electricBlue transition">
+                    <i class="fa-solid fa-arrow-left text-electricBlue dark:text-cyberCyan"></i>
+                    <span>Retour à l'accueil & aux prestations</span>
+                </button>
+                <div class="text-xs theme-text-muted font-medium">
+                    <span class="cursor-pointer hover:underline" onclick="closeServicePage()">Accueil</span>
+                    <span class="mx-2">/</span>
+                    <span>Nos Prestations</span>
+                    <span class="mx-2">/</span>
+                    <span id="detail-breadcrumb" class="text-electricBlue dark:text-cyberCyan font-bold">Détail</span>
+                </div>
+            </div>
+
+            <!-- En-tête de la page Prestation -->
+            <div class="grid lg:grid-cols-12 gap-10 items-center mb-16">
+                <div class="lg:col-span-7 space-y-5">
+                    <div id="detail-badge" class="inline-flex items-center space-x-2 bg-electricBlue/10 border border-electricBlue/25 text-electricBlue dark:text-cyberCyan text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
+                        <span>Prestation Spécialisée</span>
+                    </div>
+                    <h1 id="detail-title" class="font-anton text-4xl sm:text-6xl uppercase theme-text-main leading-none">
+                        TITRE DE LA PRESTATION
+                    </h1>
+                    <p id="detail-subtitle" class="theme-text-muted text-base sm:text-lg leading-relaxed font-medium">
+                        Description principale de la prestation.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-4">
+                        <button id="detail-cta-btn" class="bg-electricBlue hover:bg-teal-700 text-white font-bold text-sm px-8 py-4 rounded-xl glow-blue transition flex items-center space-x-2">
+                            <span>Demander un devis pour cette prestation</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <a href="tel:+33649542845" class="glass-card theme-text-main font-bold text-sm px-6 py-4 rounded-xl hover:border-electricBlue transition flex items-center space-x-2">
+                            <i class="fa-solid fa-phone text-electricBlue dark:text-cyberCyan"></i>
+                            <span>Conseil direct : 06 49 54 28 45</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5">
+                    <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-white/15 shadow-xl">
+                        <img id="detail-image" src="" alt="Illustration prestation Bache Elec" class="w-full h-72 sm:h-80 object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenu détaillé -->
+            <div class="grid lg:grid-cols-12 gap-10">
+                
+                <div class="lg:col-span-8 space-y-10">
+                    
+                    <div class="glass-card p-7 sm:p-9 rounded-3xl space-y-4">
+                        <h2 class="font-anton text-2xl sm:text-3xl uppercase theme-text-main">EN QUOI CONSISTE CETTE PRESTATION ?</h2>
+                        <div id="detail-description" class="theme-text-muted text-sm sm:text-base leading-relaxed space-y-4"></div>
+                    </div>
+
+                    <div class="glass-card p-7 sm:p-9 rounded-3xl">
+                        <h2 class="font-anton text-2xl sm:text-3xl uppercase theme-text-main mb-6">CE QUI EST INCLUS DANS NOTRE INTERVENTION</h2>
+                        <div id="detail-features" class="grid sm:grid-cols-2 gap-4"></div>
+                    </div>
+
+                    <div class="glass-card p-7 sm:p-9 rounded-3xl">
+                        <h2 class="font-anton text-2xl sm:text-3xl uppercase theme-text-main mb-6">QUESTIONS FRÉQUENTES</h2>
+                        <div id="detail-faq" class="space-y-4"></div>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar -->
+                <div class="lg:col-span-4 space-y-8">
+                    
+                    <div class="glass-card p-7 rounded-3xl space-y-5">
+                        <h3 class="font-anton text-2xl uppercase theme-text-main">NOS ENGAGEMENTS QUALITÉ</h3>
+                        <ul class="space-y-3.5 text-xs sm:text-sm theme-text-muted">
+                            <li class="flex items-start space-x-3">
+                                <i class="fa-solid fa-shield-halved text-amber-500 text-base mt-0.5"></i>
+                                <span><strong class="theme-text-main">Assurance Décennale :</strong> Tous nos ouvrages électriques et frigorifiques sont couverts pendant 10 ans.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fa-solid fa-file-signature text-electricBlue dark:text-cyberCyan text-base mt-0.5"></i>
+                                <span><strong class="theme-text-main">Devis Gratuit & Détaillé :</strong> Aucune mauvaise surprise, chiffrage transparent sous 48h.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fa-solid fa-medal text-electricBlue dark:text-cyberCyan text-base mt-0.5"></i>
+                                <span><strong class="theme-text-main">Matériel de Grandes Marques :</strong> Schneider Electric, Legrand, Hager, Daikin, Mitsubishi Electric.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card p-7 rounded-3xl space-y-4">
+                        <h3 class="font-anton text-xl uppercase theme-text-main">DÉCOUVRIR NOS AUTRES PRESTATIONS</h3>
+                        <div class="space-y-2" id="sidebar-other-services"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0F172A] dark:bg-[#030709] border-t border-white/10 pt-16 pb-12 text-slate-400 text-sm relative z-10">
+        <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-electricBlue to-cyberCyan flex items-center justify-center">
+                        <i class="fa-solid fa-bolt-lightning text-white"></i>
+                    </div>
+                    <span class="font-anton text-2xl tracking-wider text-white">BACHE <span class="text-cyberCyan">ELEC</span></span>
+                </div>
+                <p class="text-xs leading-relaxed text-slate-400">
+                    Votre artisan expert en électricité générale, rénovation aux normes NF C 15-100, domotique et installation de climatisation réversible à Saint-Lys, Toulouse et en Haute-Garonne (31).
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Pages Prestations</h4>
+                <ul class="space-y-2.5 text-xs">
+                    <li><button onclick="openServicePage('climatisation')" class="text-cyberCyan hover:underline text-left">❄️ Climatisation Réversible & PAC</button></li>
+                    <li><button onclick="openServicePage('installation')" class="hover:text-white transition text-left">⚡ Installation Électrique Complète</button></li>
+                    <li><button onclick="openServicePage('renovation')" class="hover:text-white transition text-left">🛡️ Rénovation & Tableaux Électriques</button></li>
+                    <li><button onclick="openServicePage('domotique')" class="hover:text-white transition text-left">📱 Domotique & Maison Connectée</button></li>
+                    <li><button onclick="openServicePage('vmc')" class="hover:text-white transition text-left">💨 VMC & Réseau Informatique RJ45</button></li>
+                    <li><button onclick="openServicePage('depannage')" class="hover:text-white transition text-left">🚨 Dépannage Électrique Urgent</button></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Zones d'Intervention</h4>
+                <ul class="space-y-2 text-xs">
+                    <li>📍 Saint-Lys (31470)</li>
+                    <li>📍 Toulouse (31000 - Tous quartiers)</li>
+                    <li>📍 Colomiers & Blagnac</li>
+                    <li>📍 Muret, Seysses & Fonsorbes</li>
+                    <li>📍 Plaisance-du-Touch & Tournefeuille</li>
+                    <li>📍 Merville & Nord Toulousain</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Contact Direct</h4>
+                <ul class="space-y-3 text-xs">
+                    <li><i class="fa-solid fa-phone text-cyberCyan mr-2"></i><a href="tel:+33649542845" class="text-white font-bold">06 49 54 28 45</a></li>
+                    <li><i class="fa-solid fa-envelope text-cyberCyan mr-2"></i><a href="mailto:info@bacheelec.fr">info@bacheelec.fr</a></li>
+                    <li><i class="fa-solid fa-location-dot text-cyberCyan mr-2"></i>41 Joseph Bouas, 31470 Saint-Lys</li>
+                    <li><i class="fa-regular fa-clock text-cyberCyan mr-2"></i>Lun - Ven : 08h00 - 18h00</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+            <p>© 2026 Bache Elec — Tous droits réservés.</p>
+            <div class="flex space-x-6 mt-4 sm:mt-0">
+                <a href="#" class="hover:text-slate-300">Mentions Légales</a>
+                <a href="#" class="hover:text-slate-300">Politique de Confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BARRE D'ACTION FIXE EN BAS (Smartphone Uniquement) -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 sm:hidden glass-nav border-t border-slate-200 dark:border-white/15 p-3 px-4 flex gap-3 shadow-2xl">
+        <a href="tel:+33649542845" class="flex-1 bg-white dark:bg-slate-800 border border-slate-300 dark:border-white/15 theme-text-main font-bold text-xs py-3.5 rounded-xl flex items-center justify-center space-x-2 shadow-sm active:scale-95 transition">
+            <i class="fa-solid fa-phone-volume text-electricBlue dark:text-cyberCyan text-sm"></i>
+            <span>Appeler</span>
+        </a>
+        <button onclick="scrollToQuoteWithService('climatisation')" class="flex-1 bg-electricBlue text-white font-bold text-xs py-3.5 rounded-xl flex items-center justify-center space-x-2 glow-blue active:scale-95 transition">
+            <i class="fa-regular fa-snowflake text-sm"></i>
+            <span>Devis Gratuit</span>
+        </button>
+    </div>
+
+    <div class="h-16 sm:hidden"></div>
+
+    <!-- ========================================================================= -->
+    <!-- SCRIPTS JS COMPLETS                                                       -->
+    <!-- ========================================================================= -->
+    <script>
+        // 1. BASE DE DONNÉES DES 6 PAGES DE PRESTATIONS
+        const servicesData = {
+            climatisation: {
+                badge: "❄️ Froid, Chauffage & Pompe à Chaleur Air/Air",
+                title: "Installation de Climatisation Réversible",
+                subtitle: "Alliez fraîcheur estivale et chauffage ultra-économique en hiver grâce à nos solutions de climatisation Inverter A+++ posées dans les règles de l'art à Toulouse et Saint-Lys.",
+                image: "https://images.unsplash.com/photo-1631545806609-35d4ae490431?auto=format&fit=crop&w=1000&q=80",
+                formValue: "climatisation",
+                description: `
+                    <p>En Haute-Garonne, les étés sont de plus en plus caniculaires et le coût du chauffage hivernal ne cesse d'augmenter. La <strong>climatisation réversible (Pompe à Chaleur Air/Air)</strong> est la solution 2-en-1 par excellence : elle rafraîchit votre intérieur en été et restitue jusqu'à 4 kWh de chaleur pour seulement 1 kWh d'électricité consommé en hiver.</p>
+                    <p>En tant qu'électriciens-climaticiens qualifiés, nous maîtrisons à la fois le bilan thermique de vos volumes, le passage esthétique des liaisons frigorifiques et la sécurisation complète de votre tableau électrique (création d'une ligne dédiée avec disjoncteur courbe C et protection différentielle adaptée).</p>
+                `,
+                features: [
+                    "Bilan thermique gratuit à domicile pour dimensionner la puissance exacte (en kW / BTU)",
+                    "Pose de Climatisation Mono-Split (idéal salon ou chambre principale)",
+                    "Pose de Climatisation Multi-Split (2 à 5 unités intérieures pilotables individuellement)",
+                    "Système Gainable invisible intégré dans les combles ou faux-plafonds",
+                    "Création de la ligne électrique dédiée et protection au tableau général",
+                    "Mise en service, contrôle d'étanchéité, entretien annuel et nettoyage antibactérien"
+                ],
+                faqs: [
+                    {
+                        q: "Quelle puissance choisir pour ma pièce ?",
+                        a: "En moyenne, on compte environ 100W par m² (soit un appareil de 2,5 kW pour une pièce de 25m² bien isolée, ou 3,5 kW pour un séjour de 35m²). Nous réalisons systématiquement une étude sur place selon votre isolation et votre exposition."
+                    },
+                    {
+                        q: "Avec quelles marques travaillez-vous ?",
+                        a: "Nous installons exclusivement des marques reconnues pour leur fiabilité, leur silence (dès 19 dB) et la disponibilité de leurs pièces : Daikin, Mitsubishi Electric, Atlantic et Toshiba."
+                    }
+                ]
+            },
+            installation: {
+                badge: "⚡ Construction Neuve, Extension & Tertiaire",
+                title: "Installation Électrique Complète",
+                subtitle: "Conception et réalisation de A à Z de votre réseau électrique domestique ou tertiaire en conformité stricte avec la norme NF C 15-100 et attestation Consuel.",
+                image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80",
+                formValue: "installation",
+                description: `
+                    <p>Vous faites construire une maison individuelle, réalisez une extension ou aménagez un local professionnel dans la région toulousaine ? La conception de votre réseau électrique détermine votre confort quotidien et la sécurité de votre bâtiment pour les décennies à venir.</p>
+                    <p>Bache Elec vous accompagne dès l'étude des plans architecturaux pour positionner intelligemment chaque prise, point lumineux, arrivée électroménager et alimentation extérieure, jusqu'à la délivrance de votre attestation de conformité <strong>Consuel</strong>.</p>
+                `,
+                features: [
+                    "Étude et réalisation des plans d'implantation électrique pièce par pièce",
+                    "Pose de la GTL (Gaine Technique de Logement) et du tableau de répartition",
+                    "Passage des gaines ICTA en dalle, cloisons sèches, combles ou saignées",
+                    "Création de la prise de terre réglementaire et liaison équipotentielle",
+                    "Pose de l'appareillage moderne (prises, interrupteurs, variateurs, spots LED)",
+                    "Éclairage architectural extérieur, portail électrique et borne de recharge IRVE"
+                ],
+                faqs: [
+                    {
+                        q: "Prenez-vous en charge le dossier Consuel ?",
+                        a: "Oui, toutes nos installations neuves respectent scrupuleusement la norme NF C 15-100 en vigueur et nous vous accompagnons jusqu'à l'obtention de l'attestation Consuel indispensable à la mise sous tension par Enedis."
+                    },
+                    {
+                        q: "Quand faut-il vous solliciter pour une construction neuve ?",
+                        a: "Idéalement dès la validation des plans ou avant le coulage de la dalle et la pose du placo afin d'anticiper toutes les réservations et passages de gaines."
+                    }
+                ]
+            },
+            renovation: {
+                badge: "🛡️ Sécurité & Mise aux Normes NF C 15-100",
+                title: "Rénovation & Tableaux Électriques",
+                subtitle: "Sécurisez votre habitation ancienne, remplacez votre tableau à fusibles vétuste et éliminez tout risque d'incendie ou d'électrocution.",
+                image: "https://images.unsplash.com/photo-1558402529-d2638a7023e9?auto=format&fit=crop&w=1000&q=80",
+                formValue: "renovation",
+                description: `
+                    <p>Une installation électrique de plus de 15 ou 20 ans présente souvent des anomalies critiques : absence d'interrupteurs différentiels 30mA, porte-fusibles en porcelaine, fils dénudés, absence de terre dans la cuisine ou la salle de bain, ou surcharge liée aux nouveaux appareils modernes (plaques à induction, climatisation, sèche-linge).</p>
+                    <p>Nous réalisons des <strong>rénovations électriques complètes ou partielles</strong> (apparentes sous moulures fines ou encastrées) pour remettre votre logement en parfaite conformité et valoriser votre patrimoine immobilier.</p>
+                `,
+                features: [
+                    "Diagnostic complet de l'installation existante et levée des anomalies du DPE",
+                    "Remplacement de tableau électrique vétuste par un coffret moderne (Schneider / Legrand)",
+                    "Installation d'interrupteurs différentiels 30mA (Type A, AC, F) et disjoncteurs divisionnaires",
+                    "Création ou amélioration de la mise à la terre du bâtiment",
+                    "Mise aux normes des volumes de sécurité dans les salles de bain",
+                    "Ajout de prises de courant, circuits spécialisés cuisine et modernisation de l'éclairage"
+                ],
+                faqs: [
+                    {
+                        q: "Combien de temps dure le remplacement d'un tableau électrique ?",
+                        a: "Le remplacement complet d'un tableau électrique avec repérage des circuits prend généralement entre une demi-journée et une journée complète. Le courant est rétabli le soir même."
+                    },
+                    {
+                        q: "Faut-il obligatoirement casser les murs pour rénover l'électricité ?",
+                        a: "Non. Selon votre budget et votre projet, nous pouvons réutiliser les gaines existantes, encastrer dans les nouvelles cloisons, ou utiliser des goulottes et plinthes électriques ultra-fines et esthétiques."
+                    }
+                ]
+            },
+            domotique: {
+                badge: "📱 Maison Connectée & Automatisme",
+                title: "Domotique & Solutions Sans Fil",
+                subtitle: "Pilotez vos éclairages, vos volets roulants, votre chauffage et votre climatisation du bout des doigts sur votre smartphone, où que vous soyez.",
+                image: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1000&q=80",
+                formValue: "domotique",
+                description: `
+                    <p>La domotique moderne ne nécessite plus de lourds travaux de câblage. Grâce aux protocoles radio sans fil ultra-fiables (Yokis, Legrand with Netatmo, Delta Dore, Somfy), nous transformons votre maison existante ou neuve en un <strong>logement intelligent, économe et sécurisé</strong>.</p>
+                    <p>Créez des scénarios sur mesure : d'un seul clic en quittant votre domicile, tous vos éclairages s'éteignent, vos volets se ferment et votre climatisation passe en mode Éco.</p>
+                `,
+                features: [
+                    "Centralisation et automatisation des volets roulants et brise-soleil",
+                    "Interrupteurs connectés sans fil et sans pile (ajout d'un va-et-vient sans tirer de câble)",
+                    "Gestion intelligente du chauffage électrique et de la climatisation par zone",
+                    "Création de scénarios de vie (Départ, Arrivée, Nuit, Simulation de présence)",
+                    "Installation de visiophones connectés avec ouverture de portail sur smartphone",
+                    "Compatibilité totale avec Apple HomeKit, Google Home et Amazon Alexa"
+                ],
+                faqs: [
+                    {
+                        q: "Peut-on installer de la domotique dans une maison déjà terminée ?",
+                        a: "Absolument. Nous installons des micromodules récepteurs directement derrière vos interrupteurs ou dans vos coffrets de volets existants, sans aucune dégradation de votre décoration."
+                    },
+                    {
+                        q: "Que se passe-t-il en cas de coupure Internet ?",
+                        a: "Vos interrupteurs et commandes locales continuent de fonctionner tout à fait normalement comme une installation électrique classique."
+                    }
+                ]
+            },
+            vmc: {
+                badge: "💨 Qualité de l'Air & Connectivité Haut Débit",
+                title: "VMC & Réseau Informatique RJ45",
+                subtitle: "Assainissez l'air de votre logement contre l'humidité et profitez d'un réseau informatique filaire et Wi-Fi ultra-rapide dans chaque pièce.",
+                image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1000&q=80",
+                formValue: "domotique",
+                description: `
+                    <p>Un logement moderne bien isolé nécessite un renouvellement d'air permanent pour éviter la condensation, les moisissures et les polluants intérieurs. Nous installons et remplaçons vos systèmes de <strong>Ventilation Mécanique Contrôlée (VMC)</strong> simple flux hygroréglable ou double flux.</p>
+                    <p>Parallèlement, pour répondre aux besoins du télétravail, du streaming 4K et des objets connectés, nous concevons votre réseau <strong>VDI (Voix, Données, Images)</strong> avec prises RJ45 Grade 3 TV et bornes Wi-Fi professionnelles.</p>
+                `,
+                features: [
+                    "Pose et remplacement de VMC Simple Flux Autoréglable ou Hygroréglable (Basse consommation)",
+                    "Installation de VMC Double Flux pour récupérer les calories de chauffage",
+                    "Entretien des bouches d'extraction et vérification de la sécurité électrique du caisson",
+                    "Tirage de câbles Ethernet Catégorie 6a / Grade 3 TV et pose de prises RJ45 murales",
+                    "Installation de coffrets de communication et baies de brassage (particuliers & bureaux)",
+                    "Déploiement de bornes Wi-Fi Mesh / Point d'accès plafond pour une couverture 100%"
+                ],
+                faqs: [
+                    {
+                        q: "Pourquoi ma VMC fait-elle du bruit ou n'aspire plus ?",
+                        a: "Avec le temps, les roulements du moteur s'encrassent, ce qui crée un bruit sourd et un risque d'échauffement électrique. Le remplacement par un caisson hygroréglable récent divise la consommation par 3 et assure un silence total."
+                    },
+                    {
+                        q: "Quel est l'intérêt des prises RJ45 par rapport au Wi-Fi ?",
+                        a: "Une liaison filaire RJ45 garantit un débit maximal (jusqu'à 10 Gbps) sans aucune perte ni latence pour votre bureau de télétravail, votre télévision ou votre console, tout en servant de point d'ancrage pour des bornes Wi-Fi secondaires."
+                    }
+                ]
+            },
+            depannage: {
+                badge: "🚨 Urgence 7j/7 à Saint-Lys, Toulouse & 31",
+                title: "Dépannage & Recherche de Panne",
+                subtitle: "Coupure de courant, disjoncteur qui saute, odeur de brûlé au tableau ou panne de climatisation ? Intervention rapide et diagnostic précis.",
+                image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1000&q=80",
+                formValue: "depannage",
+                description: `
+                    <p>Une panne électrique ou thermique ne prévient jamais et peut rapidement paralyser votre foyer ou votre activité professionnelle (frigo/congélateur à l'arrêt, plus de chauffage ni d'eau chaude, volet roulant bloqué). Basés à Saint-Lys aux portes de Toulouse, nous intervenons rapidement dans toute la Haute-Garonne.</p>
+                    <p>Grâce à nos appareils de mesure professionnels (multimètre, mégohmmètre, caméra thermique), nous isolons rapidement l'origine exacte du défaut d'isolement ou du court-circuit pour une réparation fiable et durable.</p>
+                `,
+                features: [
+                    "Recherche méthodique de panne électrique (court-circuit, défaut d'isolement à la terre)",
+                    "Remplacement immédiat de disjoncteur, interrupteur différentiel ou contacteur jour/nuit HS",
+                    "Dépannage de ballon d'eau chaude électrique (cumulus : thermostat, résistance, contacteur)",
+                    "Réparation de prises brûlées, interrupteurs défectueux et pannes d'éclairage",
+                    "Diagnostic et dépannage de climatisation réversible et VMC en panne",
+                    "Mise en sécurité immédiate après sinistre électrique ou surtension d'orage"
+                ],
+                faqs: [
+                    {
+                        q: "Dans quels délais intervenez-vous en cas d'urgence ?",
+                        a: "Pour une coupure totale de courant ou un problème de sécurité électrique autour de Saint-Lys, Colomiers, Muret et Toulouse, nous faisons le maximum pour intervenir dans la journée."
+                    },
+                    {
+                        q: "Le tarif du dépannage est-il annoncé à l'avance ?",
+                        a: "Oui, nous vous annonçons le forfait de déplacement et de recherche de panne dès votre appel téléphonique. Si une pièce importante doit être remplacée, un chiffrage clair vous est soumis avant toute réparation."
+                    }
+                ]
+            }
+        };
+
+        // 2. NAVIGATION SPA VERS LES PAGES DE PRESTATIONS
+        const homeView = document.getElementById('home-view');
+        const detailView = document.getElementById('service-detail-view');
+
+        function openServicePage(serviceKey, updateHash = true) {
+            const data = servicesData[serviceKey];
+            if (!data) return;
+
+            document.getElementById('detail-breadcrumb').textContent = data.title;
+            document.getElementById('detail-badge').innerHTML = `<span>${data.badge}</span>`;
+            document.getElementById('detail-title').textContent = data.title;
+            document.getElementById('detail-subtitle').textContent = data.subtitle;
+            document.getElementById('detail-image').src = data.image;
+            document.getElementById('detail-image').alt = data.title;
+            document.getElementById('detail-description').innerHTML = data.description;
+
+            document.getElementById('detail-cta-btn').onclick = () => {
+                scrollToQuoteWithService(data.formValue);
+            };
+
+            const featuresContainer = document.getElementById('detail-features');
+            featuresContainer.innerHTML = data.features.map(feat => `
+                <div class="flex items-start space-x-3 p-3.5 rounded-2xl bg-slate-500/5 border border-slate-200 dark:border-white/5">
+                    <i class="fa-solid fa-circle-check text-electricBlue dark:text-cyberCyan mt-1"></i>
+                    <span class="text-xs sm:text-sm theme-text-main font-medium leading-snug">${feat}</span>
+                </div>
+            `).join('');
+
+            const faqContainer = document.getElementById('detail-faq');
+            faqContainer.innerHTML = data.faqs.map(item => `
+                <div class="p-5 rounded-2xl bg-slate-500/5 border border-slate-200 dark:border-white/5">
+                    <h4 class="font-bold theme-text-main text-sm sm:text-base mb-2 flex items-center">
+                        <i class="fa-regular fa-circle-question text-electricBlue dark:text-cyberCyan mr-2"></i>
+                        ${item.q}
+                    </h4>
+                    <p class="text-xs sm:text-sm theme-text-muted leading-relaxed">${item.a}</p>
+                </div>
+            `).join('');
+
+            const sidebarContainer = document.getElementById('sidebar-other-services');
+            sidebarContainer.innerHTML = Object.keys(servicesData)
+                .filter(k => k !== serviceKey)
+                .map(k => `
+                    <button onclick="openServicePage('${k}')" class="w-full text-left p-3.5 rounded-xl hover:bg-electricBlue/10 border border-transparent hover:border-electricBlue/30 transition flex items-center justify-between group">
+                        <span class="text-xs sm:text-sm font-semibold theme-text-main group-hover:text-electricBlue dark:group-hover:text-cyberCyan">${servicesData[k].title}</span>
+                        <i class="fa-solid fa-chevron-right text-xs theme-text-muted group-hover:translate-x-1 transition"></i>
+                    </button>
+                `).join('');
+
+            homeView.classList.add('hidden');
+            detailView.classList.remove('hidden');
+
+            if (updateHash) {
+                history.pushState({ service: serviceKey }, '', `#service-${serviceKey}`);
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function closeServicePage(updateHash = true) {
+            detailView.classList.add('hidden');
+            homeView.classList.remove('hidden');
+            if (updateHash && window.location.hash.startsWith('#service-')) {
+                history.pushState({}, '', window.location.pathname);
+            }
+        }
+
+        function scrollToQuoteWithService(formValue) {
+            closeServicePage();
+            const selectEl = document.getElementById('service-select');
+            if (selectEl && formValue) {
+                selectEl.value = formValue;
+            }
+            setTimeout(() => {
+                document.getElementById('devis').scrollIntoView({ behavior: 'smooth' });
+            }, 60);
+        }
+
+        function handleHashRouting() {
+            const hash = window.location.hash;
+            if (hash.startsWith('#service-')) {
+                const key = hash.replace('#service-', '');
+                if (servicesData[key]) {
+                    openServicePage(key, false);
+                    return;
+                }
+            }
+            closeServicePage(false);
+        }
+
+        window.addEventListener('popstate', handleHashRouting);
+        window.addEventListener('DOMContentLoaded', handleHashRouting);
+
+        // 3. GESTION DU THÈME : LIGHT MODE PAR DÉFAUT
+        const htmlEl = document.documentElement;
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDot = document.getElementById('theme-toggle-dot');
+        const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
+        const themeMobileIcon = document.getElementById('theme-mobile-icon');
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                htmlEl.classList.add('dark');
+                if (themeToggleDot) {
+                    themeToggleDot.classList.remove('translate-x-0');
+                    themeToggleDot.classList.add('translate-x-7');
+                }
+                themeMobileIcon.className = 'fa-solid fa-moon text-cyberCyan';
+            } else {
+                htmlEl.classList.remove('dark');
+                if (themeToggleDot) {
+                    themeToggleDot.classList.remove('translate-x-7');
+                    themeToggleDot.classList.add('translate-x-0');
+                }
+                themeMobileIcon.className = 'fa-solid fa-sun text-amber-500';
+            }
+            localStorage.setItem('bacheelec_theme_v2', theme);
+        }
+
+        const savedTheme = localStorage.getItem('bacheelec_theme_v2') || 'light';
+        applyTheme(savedTheme);
+
+        function toggleTheme() {
+            const isDark = htmlEl.classList.contains('dark');
+            applyTheme(isDark ? 'light' : 'dark');
+        }
+
+        if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+        if (themeToggleMobileBtn) themeToggleMobileBtn.addEventListener('click', toggleTheme);
+
+        // 4. MENU MOBILE
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuBtn.querySelector('i');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.className = mobileMenu.classList.contains('hidden') 
+                ? 'fa-solid fa-bars' 
+                : 'fa-solid fa-xmark';
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars';
+            });
+        });
+
+        // 5. FILTRAGE DES RÉALISATIONS
+        function filterProjects(category, clickedBtn) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-electricBlue', 'text-white');
+                btn.classList.add('glass-card', 'theme-text-main');
+            });
+            clickedBtn.classList.remove('glass-card', 'theme-text-main');
+            clickedBtn.classList.add('bg-electricBlue', 'text-white');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // 6. SOUMISSION DU FORMULAIRE
+        const quoteForm = document.getElementById('quote-form');
+        const feedback = document.getElementById('form-feedback');
+        quoteForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            feedback.classList.remove('hidden');
+            quoteForm.reset();
+        });
+
+        // 7. GESTION DES CARROUSELS PHOTOS PAR PROJET
+        function moveSlide(btn, direction) {
+            const card = btn.closest('[data-carousel]');
+            const slides = card.querySelectorAll('.carousel-slide');
+            const dots = card.querySelectorAll('.carousel-dot');
+            const counter = card.querySelector('.carousel-counter');
+
+            let currentIndex = Array.from(slides).findIndex(slide => !slide.classList.contains('hidden'));
+            let newIndex = (currentIndex + direction + slides.length) % slides.length;
+
+            slides.forEach((slide, idx) => {
+                if (idx === newIndex) {
+                    slide.classList.remove('hidden', 'opacity-0');
+                    slide.classList.add('opacity-100');
+                } else {
+                    slide.classList.add('hidden', 'opacity-0');
+                    slide.classList.remove('opacity-100');
+                }
+            });
+
+            dots.forEach((dot, idx) => {
+                dot.className = idx === newIndex 
+                    ? 'carousel-dot w-2.5 h-2 rounded-full bg-cyberCyan transition-all' 
+                    : 'carousel-dot w-2 h-2 rounded-full bg-white/40 transition-all';
+            });
+
+            if (counter) {
+                counter.textContent = `${newIndex + 1} / ${slides.length}`;
+            }
+        }
+
+        // 8. GESTION DU COMPARATEUR AVANT / APRÈS INTERACTIF
+        const beforeAfterData = [
+            {
+                before: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=1000&q=80",
+                after: "https://images.unsplash.com/photo-1558402529-d2638a7023e9?auto=format&fit=crop&w=1000&q=80",
+                caption: "Remplacement d'un ancien tableau vétuste et dangereux par un coffret Schneider Electric normé NF C 15-100 avec repérage complet."
+            },
+            {
+                before: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80",
+                after: "https://images.unsplash.com/photo-1631545806609-35d4ae490431?auto=format&fit=crop&w=1000&q=80",
+                caption: "Intégration esthétique d'un split mural réversible Inverter A+++ sans aucune goulotte apparente."
+            }
+        ];
+
+        function updateBeforeAfter(value) {
+            const beforeImg = document.getElementById('ba-before-img');
+            const divider = document.getElementById('ba-divider');
+            const beforeBadge = document.getElementById('ba-before-badge');
+
+            beforeImg.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+            divider.style.left = `${value}%`;
+
+            if (beforeBadge) {
+                beforeBadge.style.opacity = value < 18 ? '0' : '1';
+            }
+        }
+
+        function switchBeforeAfter(index, clickedBtn) {
+            const item = beforeAfterData[index];
+            if (!item) return;
+
+            document.getElementById('ba-before-img').src = item.before;
+            document.getElementById('ba-after-img').src = item.after;
+            document.getElementById('ba-caption').textContent = item.caption;
+
+            const slider = document.getElementById('ba-slider');
+            slider.value = 50;
+            updateBeforeAfter(50);
+
+            document.querySelectorAll('.ba-switch-btn').forEach(btn => {
+                btn.classList.remove('bg-electricBlue', 'text-white');
+                btn.classList.add('glass-card', 'theme-text-main');
+            });
+            clickedBtn.classList.remove('glass-card', 'theme-text-main');
+            clickedBtn.classList.add('bg-electricBlue', 'text-white');
+        }
+    </script>
+</body>
+</html>
